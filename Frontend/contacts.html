@@ -1,0 +1,197 @@
+<!-- Frontend/contacts.html -->
+<!-- NEXT STEP = FULLY RESPONSIVE PREMIUM CONTACTS -->
+<!-- PURA FILE REPLACE KARO -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emergency Contacts | RapidRescue</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+min-height:100vh;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 22px;
+background:#111827;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#ef4444;
+}
+
+button{
+padding:10px 16px;
+border:none;
+border-radius:10px;
+background:#1e293b;
+color:white;
+cursor:pointer;
+font-weight:bold;
+}
+
+.container{
+padding:22px;
+}
+
+.title{
+font-size:32px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.sub{
+color:#94a3b8;
+margin-bottom:22px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:16px;
+}
+
+.card{
+background:#111827;
+padding:22px;
+border-radius:18px;
+transition:0.3s;
+}
+
+.card:hover{
+background:#1e293b;
+transform:translateY(-4px);
+}
+
+.icon{
+font-size:34px;
+margin-bottom:12px;
+}
+
+.card h2{
+font-size:22px;
+margin-bottom:10px;
+}
+
+.card p{
+font-size:14px;
+line-height:1.6;
+color:#cbd5e1;
+margin-bottom:12px;
+}
+
+.number{
+font-size:24px;
+font-weight:bold;
+color:#38bdf8;
+margin-bottom:12px;
+}
+
+.call{
+display:inline-block;
+padding:10px 14px;
+border-radius:10px;
+background:#ef4444;
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+@media(max-width:600px){
+
+.title{
+font-size:26px;
+}
+
+.logo{
+font-size:24px;
+}
+
+.container{
+padding:16px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">RapidRescue</div>
+
+<button onclick="location.href='dashboard.html'">
+Dashboard
+</button>
+
+</nav>
+
+<div class="container">
+
+<div class="title">📞 Emergency Contacts</div>
+
+<div class="sub">
+Instant help numbers for emergency situations.
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🚑</div>
+<h2>Ambulance</h2>
+<p>Medical emergency response.</p>
+<div class="number">108</div>
+<a href="tel:108" class="call">Call Now</a>
+</div>
+
+<div class="card">
+<div class="icon">👮</div>
+<h2>Police</h2>
+<p>Law and traffic support.</p>
+<div class="number">100</div>
+<a href="tel:100" class="call">Call Now</a>
+</div>
+
+<div class="card">
+<div class="icon">🔥</div>
+<h2>Fire Brigade</h2>
+<p>Vehicle fire rescue.</p>
+<div class="number">101</div>
+<a href="tel:101" class="call">Call Now</a>
+</div>
+
+<div class="card">
+<div class="icon">🏥</div>
+<h2>Hospital</h2>
+<p>Trauma care support.</p>
+<div class="number">102</div>
+<a href="tel:102" class="call">Call Now</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!-- Frontend/news.html -->
+<!-- FIXED LIVE NEWS PAGE -->
+<!-- PURA FILE REPLACE KARO -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live News | RapidRescue</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+min-height:100vh;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 22px;
+background:#111827;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#ef4444;
+}
+
+button{
+padding:10px 16px;
+border:none;
+border-radius:10px;
+background:#1e293b;
+color:white;
+cursor:pointer;
+font-weight:bold;
+}
+
+.container{
+padding:22px;
+}
+
+.title{
+font-size:32px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.sub{
+color:#94a3b8;
+margin-bottom:20px;
+}
+
+#newsBox{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:16px;
+}
+
+.card{
+background:#111827;
+padding:20px;
+border-radius:18px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+background:#1e293b;
+}
+
+.badge{
+display:inline-block;
+padding:6px 12px;
+border-radius:18px;
+font-size:12px;
+font-weight:bold;
+margin-bottom:12px;
+background:#ef4444;
+}
+
+.card h2{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.card p{
+font-size:14px;
+line-height:1.7;
+color:#cbd5e1;
+margin-bottom:10px;
+}
+
+small{
+color:#94a3b8;
+display:block;
+margin-top:10px;
+}
+
+@media(max-width:600px){
+
+.title{
+font-size:26px;
+}
+
+.container{
+padding:16px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">RapidRescue</div>
+
+<button onclick="location.href='dashboard.html'">
+Dashboard
+</button>
+
+</nav>
+
+<div class="container">
+
+<div class="title">📰 Live Accident News</div>
+
+<div class="sub">
+Daily road accident alerts and safety updates.
+</div>
+
+<div id="newsBox"></div>
+
+</div>
+
+<script>
+const fallbackNews = [
+
+{
+title:"Mumbai Highway Collision Controlled",
+desc:"Emergency teams responded quickly and traffic restored."
+},
+
+{
+title:"Rain Alert on Expressway",
+desc:"Drivers advised to slow down due to low visibility."
+},
+
+{
+title:"RapidRescue Saves Injured Rider",
+desc:"Nearest ambulance reached in under 8 minutes."
+},
+
+{
+title:"Night Driving Safety Warning",
+desc:"Use headlights and maintain safe distance."
+},
+
+{
+title:"Truck Breakdown Cleared",
+desc:"Police and rescue teams reopened blocked lane."
+},
+
+{
+title:"Seatbelt Awareness Drive Started",
+desc:"Officials begin campaign to reduce fatalities."
+}
+
+];
+
+function showFallback(){
+
+const box = document.getElementById("newsBox");
+
+box.innerHTML = "";
+
+fallbackNews.forEach(item=>{
+
+box.innerHTML += `
+<div class="card">
+
+<div class="badge">LIVE</div>
+
+<h2>${item.title}</h2>
+
+<p>${item.desc}</p>
+
+<small>RapidRescue Safety Feed</small>
+
+</div>
+`;
+
+});
+
+}
+
+async function loadNews(){
+
+try{
+
+const res = await fetch(
+"https://api.rss2json.com/v1/api.json?rss_url=https://news.google.com/rss/search?q=road+accident"
+);
+
+const data = await res.json();
+
+const box = document.getElementById("newsBox");
+
+box.innerHTML = "";
+
+if(!data.items || data.items.length === 0){
+showFallback();
+return;
+}
+
+data.items.slice(0,8).forEach(item=>{
+
+box.innerHTML += `
+<div class="card">
+
+<div class="badge">LIVE</div>
+
+<h2>${item.title}</h2>
+
+<p>${item.description.replace(/<[^>]+>/g,'').slice(0,140)}...</p>
+
+<small>${item.pubDate}</small>
+
+</div>
+`;
+
+});
+
+}catch{
+
+showFallback();
+
+}
+
+}
+
+loadNews();
+</script>
+
+</body>
+</html>

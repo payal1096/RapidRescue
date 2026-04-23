@@ -1,0 +1,192 @@
+<!-- Frontend/map.html -->
+<!-- NEXT STEP = FINAL PREMIUM LIVE MAP -->
+<!-- PURA FILE REPLACE KARO -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Map | RapidRescue</title>
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+min-height:100vh;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 22px;
+background:#111827;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#ef4444;
+}
+
+button{
+padding:10px 16px;
+border:none;
+border-radius:10px;
+background:#1e293b;
+color:white;
+cursor:pointer;
+font-weight:bold;
+}
+
+.container{
+padding:22px;
+}
+
+.title{
+font-size:32px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.sub{
+color:#94a3b8;
+margin-bottom:18px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:18px;
+}
+
+#map{
+height:560px;
+width:100%;
+border-radius:18px;
+overflow:hidden;
+}
+
+.side{
+background:#111827;
+padding:20px;
+border-radius:18px;
+}
+
+.side h3{
+font-size:22px;
+margin-bottom:14px;
+}
+
+.item{
+background:#1e293b;
+padding:14px;
+border-radius:12px;
+margin-bottom:12px;
+font-size:14px;
+line-height:1.6;
+}
+
+@media(max-width:900px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+#map{
+height:430px;
+}
+
+.title{
+font-size:26px;
+}
+
+.container{
+padding:16px;
+}
+
+.logo{
+font-size:24px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">RapidRescue</div>
+
+<button onclick="location.href='dashboard.html'">
+Dashboard
+</button>
+
+</nav>
+
+<div class="container">
+
+<div class="title">🗺️ Smart Live Emergency Map</div>
+
+<div class="sub">
+Live location, moving ambulance, ETA & rescue route.
+</div>
+
+<div class="grid">
+
+<div id="map"></div>
+
+<div class="side">
+
+<h3>Live Rescue Panel</h3>
+
+<div class="item" id="status">
+📍 Detecting location...
+</div>
+
+<div class="item" id="distance">
+🚑 Ambulance Nearby
+</div>
+
+<div class="item" id="eta">
+⏱ ETA Loading
+</div>
+
+<div class="item">
+🚨 Accident Severity: Critical
+</div>
+
+<div class="item">
+🚓 Police Route Cleared
+</div>
+
+<div class="item">
+🏥 Nearest Hospital: 3.2 KM
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/map-live.js"></script>
+
+</body>
+</html>

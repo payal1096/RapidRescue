@@ -1,0 +1,4 @@
+body{margin:0;font-family:Arial;background:#0f172a;color:#fff;display:flex;justify-content:center;align-items:center;min-height:100vh}
+.card{background:#1e293b;padding:25px;border-radius:16px;width:95%;max-width:420px}
+input,select,textarea,button{width:100%;padding:12px;margin:8px 0;border-radius:10px;border:none}
+button{background:#ef4444;color:#fff;font-weight:bold;cursor:pointer}

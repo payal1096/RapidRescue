@@ -1,0 +1,190 @@
+<!-- Frontend/firstaid.html -->
+<!-- NEXT STEP = FULLY RESPONSIVE PREMIUM FIRST AID -->
+<!-- PURA FILE REPLACE KARO -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First Aid Guide | RapidRescue</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+min-height:100vh;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 22px;
+background:#111827;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#ef4444;
+}
+
+button{
+padding:10px 16px;
+border:none;
+border-radius:10px;
+background:#1e293b;
+color:white;
+cursor:pointer;
+font-weight:bold;
+}
+
+.container{
+padding:22px;
+}
+
+.title{
+font-size:32px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.sub{
+color:#94a3b8;
+margin-bottom:22px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:16px;
+}
+
+.card{
+background:#111827;
+padding:22px;
+border-radius:18px;
+}
+
+.card h2{
+font-size:22px;
+margin-bottom:12px;
+}
+
+.card ul{
+padding-left:18px;
+line-height:1.9;
+color:#cbd5e1;
+font-size:14px;
+}
+
+.note{
+margin-top:18px;
+background:#111827;
+padding:18px;
+border-radius:16px;
+color:#facc15;
+line-height:1.7;
+}
+
+@media(max-width:600px){
+
+.title{
+font-size:26px;
+}
+
+.logo{
+font-size:24px;
+}
+
+.container{
+padding:16px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">RapidRescue</div>
+
+<button onclick="location.href='dashboard.html'">
+Dashboard
+</button>
+
+</nav>
+
+<div class="container">
+
+<div class="title">⛑️ First Aid Guide</div>
+
+<div class="sub">
+Quick help before ambulance arrival.
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h2>🩸 Heavy Bleeding</h2>
+<ul>
+<li>Use clean cloth</li>
+<li>Apply pressure</li>
+<li>Raise injured part</li>
+<li>Call ambulance</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🦴 Fracture</h2>
+<ul>
+<li>Do not move area</li>
+<li>Give support</li>
+<li>Keep calm</li>
+<li>Wait for help</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🔥 Burns</h2>
+<ul>
+<li>Cool with water</li>
+<li>No ice</li>
+<li>Cover gently</li>
+<li>Get treatment</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>😵 Unconscious</h2>
+<ul>
+<li>Check breathing</li>
+<li>Open airway</li>
+<li>Lay sideways</li>
+<li>Call emergency</li>
+</ul>
+</div>
+
+</div>
+
+<div class="note">
+⚠️ First aid is temporary support only. Seek professional treatment immediately.
+</div>
+
+</div>
+
+</body>
+</html>
